@@ -1,9 +1,9 @@
 'use client';
 import React, { Suspense } from 'react';
 
-import { Toaster as SonnerToaster } from 'sonner';
-import { ThemeProvider, useTheme } from 'next-themes';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import { ThemeProvider, useTheme } from 'next-themes';
+import { Toaster as SonnerToaster } from 'sonner';
 
 function CustomerToaster() {
   const theme = useTheme();
@@ -25,9 +25,9 @@ export function DynamicLayoutProviders({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProvider enableSystem themes={['light', 'dark']} defaultTheme="light">
-      {children}
+    <ThemeProvider enableSystem themes={['light', 'dark']} defaultTheme="light" storageKey="theme">
       <Suspense>
+        {children}
         <ProgressBar
           height="4px"
           color="#0047ab"

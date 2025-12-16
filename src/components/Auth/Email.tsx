@@ -5,9 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { InlineLoading } from '@/components/ui/loading-spinner';
 
 export const Email = ({
-  onSubmit,
+  onSubmitAction,
   view,
   isLoading,
   successMessage,
@@ -16,7 +17,7 @@ export const Email = ({
   className,
   style,
 }: {
-  onSubmit: (email: string) => void;
+  onSubmitAction: (email: string) => void;
   view: 'sign-in' | 'sign-up' | 'update-email' | 'forgot-password';
   isLoading: boolean;
   successMessage?: string | null | undefined;
@@ -44,7 +45,7 @@ export const Email = ({
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        onSubmit(email);
+        onSubmitAction(email);
       }}
       data-testid="magic-link-form"
       className={className}
@@ -82,8 +83,15 @@ export const Email = ({
           ) : null}
         </div>
         <div>
-          <Button className="w-full" type="submit">
-            {buttonLabelText}
+          <Button className="w-full" type="submit" disabled={isLoading}>
+            {isLoading ? (
+              <>
+                <InlineLoading size="sm" />
+                <span>Sending...</span>
+              </>
+            ) : (
+              buttonLabelText
+            )}
           </Button>
         </div>
         <div>

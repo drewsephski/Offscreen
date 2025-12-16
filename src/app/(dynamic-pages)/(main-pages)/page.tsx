@@ -1,3 +1,4 @@
+import { ExternalNavigation } from '@/app/Navbar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -8,26 +9,15 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { T } from '@/components/ui/Typography';
-import { ArrowRight, Github, Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 
 export default function LandingPage() {
   return (
     <>
-      {/* Navbar */}
-      <nav className="w-full border-b bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex h-16 items-center justify-between">
-            <Button variant="ghost" asChild>
-              <Link href="/">Home</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/login">Login</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <ExternalNavigation />
 
       {/* Hero Section */}
       <section className="relative w-full py-12 md:py-24 lg:py-32 overflow-hidden">
@@ -36,32 +26,31 @@ export default function LandingPage() {
           <div className="flex flex-col items-center gap-8 text-center">
             <div className="flex flex-col items-center gap-4">
               <Badge variant="outline" className="inline-flex items-center">
-                <span className="text-primary">Nextbase</span>
+                <span className="text-primary">Offscreen</span>
                 <span className="mx-1.5 text-muted-foreground">•</span>
-                <span>Open Source Starter Kit</span>
+                <span>Digital Family Hub</span>
               </Badge>
               <T.H1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-balance">
-                Build faster with
+                Keep your family
                 <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
                   {' '}
-                  Nextbase
+                  connected
                 </span>
               </T.H1>
               <T.P className="mx-auto max-w-[700px] text-lg text-muted-foreground md:text-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. This
-                open source starter kit by the Nextbase team provides everything
-                you need to launch your next project.
+                Offscreen helps families stay connected in the digital age. Manage screen time,
+                track activities, and create healthy digital habits together.
               </T.P>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button size="lg" asChild>
+              <Button size="lg" className="group" asChild>
                 <Link href="/login">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  Get Started <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter">
-                  <Github className="mr-2 h-4 w-4" /> Star on GitHub
+                <Link href="/about">
+                  Learn More
                 </Link>
               </Button>
             </div>
@@ -73,8 +62,8 @@ export default function LandingPage() {
               <div className="relative overflow-hidden rounded-xl border bg-background shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent"></div>
                 <Image
-                  src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1600&auto=format&fit=crop"
-                  alt="Dashboard preview"
+                  src="/images/gemini2.png"
+                  alt="Offscreen family dashboard preview"
                   className="w-full h-auto"
                   width={1600}
                   height={900}
@@ -92,12 +81,11 @@ export default function LandingPage() {
           <div className="flex flex-col items-center space-y-8 text-center">
             <div className="space-y-4 max-w-[850px]">
               <T.H2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl text-balance">
-                Feature-rich, Developer-first
+                Designed for modern families
               </T.H2>
               <T.P className="text-lg text-muted-foreground md:text-xl">
-                Lorem ipsum dolor sit amet, an open source starter kit built by
-                the Nextbase team, consectetur adipiscing elit. Sed euismod,
-                diam sit amet dictum ultrices.
+                Offscreen provides the tools you need to create healthy digital habits
+                and keep your family connected in today's screen-filled world.
               </T.P>
             </div>
 
@@ -136,23 +124,24 @@ export default function LandingPage() {
             <div className="flex flex-col gap-6">
               <Badge variant="outline" className="w-fit">
                 <Star className="mr-1.5 h-3.5 w-3.5 text-chart-1 fill-chart-1" />
-                <span>Why developers love Nextbase</span>
+                <span>Why families love Offscreen</span>
               </Badge>
               <T.H2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl text-balance">
-                Built for developers, by developers
+                Built for families, by parents who get it
               </T.H2>
               <T.P className="text-lg text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. The
-                Nextbase open source starter kit provides a solid foundation for
-                your next web application. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris.
+                We understand the challenges of raising kids in a digital world. Offscreen
+                was created to help families find the right balance between technology and
+                real-life connections, making screen time management simple and stress-free.
               </T.P>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Button size="lg" asChild>
-                  <Link href="/login">Get Started</Link>
+                <Button size="lg" className="group" asChild>
+                  <Link href="/login">
+                    Start Free Trial <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="#">View Documentation</Link>
+                  <Link href="/about">See How It Works</Link>
                 </Button>
               </div>
             </div>
@@ -160,8 +149,8 @@ export default function LandingPage() {
               <div className="absolute -inset-4 -z-10 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent opacity-50 blur-3xl"></div>
               <div className="relative overflow-hidden rounded-xl border bg-background shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop"
-                  alt="Developer experience"
+                  src="/images/gemini.png"
+                  alt="Family managing devices together"
                   className="w-full h-auto"
                   width={1200}
                   height={800}
@@ -178,27 +167,28 @@ export default function LandingPage() {
           <div className="flex flex-col items-center space-y-8 text-center">
             <div className="space-y-4 max-w-[800px]">
               <T.H2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl text-balance">
-                Ready to get started?
+                Ready to reconnect your family?
               </T.H2>
               <T.P className="mx-auto max-w-[700px] text-lg text-primary-foreground/90 md:text-xl">
-                Lorem ipsum dolor sit amet, this open source starter kit by
-                Nextbase team is all you need. Consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt.
+                Join thousands of families who have found the perfect balance with Offscreen.
+                Start your free trial today and take the first step toward healthier digital habits.
               </T.P>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" variant="secondary" className="group" asChild>
                 <Link href="/login">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  Start Free Trial <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary group"
                 asChild
               >
-                <Link href="#">Learn More</Link>
+                <Link href="/about">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
           </div>
@@ -210,9 +200,9 @@ export default function LandingPage() {
 
 const features = [
   {
-    title: 'Type-Safe',
+    title: 'Screen Time Management',
     description:
-      'Full TypeScript support with type-safe database queries and API routes for confidence in your code.',
+      'Set healthy limits and track screen time across all devices with easy-to-use parental controls.',
     icon: (
       <svg
         className="h-6 w-6 text-primary"
@@ -226,15 +216,15 @@ const features = [
         width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <polyline points="4 17 10 11 4 5" />
-        <line x1="12" x2="20" y1="19" y2="19" />
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
   },
   {
-    title: 'Modern Stack',
+    title: 'Activity Insights',
     description:
-      'Built with Next.js 14, TypeScript, Supabase, and Tailwind CSS for a future-proof foundation.',
+      'Get detailed insights into how your family spends time online with comprehensive activity reports.',
     icon: (
       <svg
         className="h-6 w-6 text-primary"
@@ -257,9 +247,9 @@ const features = [
     ),
   },
   {
-    title: 'UI Components',
+    title: 'Family Dashboard',
     description:
-      'Beautiful, accessible components built with Radix UI and customizable with Tailwind CSS.',
+      'Manage all family members from one central dashboard with real-time updates and alerts.',
     icon: (
       <svg
         className="h-6 w-6 text-primary"
@@ -282,9 +272,9 @@ const features = [
     ),
   },
   {
-    title: 'Authentication',
+    title: 'Safe Browsing',
     description:
-      'Complete auth flows including magic links, OAuth providers, and protected routes out of the box.',
+      'Protect your family with built-in content filtering and safe browsing controls for all ages.',
     icon: (
       <svg
         className="h-6 w-6 text-primary"
@@ -304,9 +294,9 @@ const features = [
     ),
   },
   {
-    title: 'API Integration',
+    title: 'App Blocking',
     description:
-      'Server actions, API routes, and database queries set up and ready for your application logic.',
+      'Control access to specific apps and set age-appropriate limits for different family members.',
     icon: (
       <svg
         className="h-6 w-6 text-primary"
@@ -327,9 +317,9 @@ const features = [
     ),
   },
   {
-    title: 'Fast Deployment',
+    title: 'Cross-Platform',
     description:
-      'Deploy to Vercel with one click and have your production-ready app live in minutes.',
+      'Works seamlessly across iOS, Android, Windows, and Mac to protect all your family devices.',
     icon: (
       <svg
         className="h-6 w-6 text-primary"

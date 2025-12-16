@@ -5,11 +5,11 @@ import {
   InputGroupInput,
 } from '@/components/ui/input-group';
 import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
 import { Lock, Mail } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
 import type { ComponentProps } from 'react';
+import { useState } from 'react';
+import { InlineLoading } from '../ui/loading-spinner';
 
 export const EmailAndPassword = ({
   onSubmit,
@@ -101,7 +101,7 @@ export const EmailAndPassword = ({
           <Button disabled={isLoading} type="submit" className="w-full">
             {isLoading ? (
               <>
-                <Spinner className="h-4 w-4 mr-2" />
+                <InlineLoading size="sm" />
                 <span>Loading...</span>
               </>
             ) : (

@@ -148,7 +148,7 @@ export function Login({
             <TabsContent value="password">
               <Card className="border-none shadow-none">
                 <CardHeader className="py-6 px-0">
-                  <CardTitle>Login to NextBase</CardTitle>
+                  <CardTitle>Login to Offscreen</CardTitle>
                   <CardDescription>
                     Login with the account you used to signup.
                   </CardDescription>
@@ -171,14 +171,14 @@ export function Login({
             <TabsContent value="magic-link">
               <Card className="border-none shadow-none">
                 <CardHeader className="py-6 px-0">
-                  <CardTitle>Login to NextBase</CardTitle>
+                  <CardTitle>Login to Offscreen</CardTitle>
                   <CardDescription>
                     Login with magic link we will send to your email.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-2 p-0">
                   <Email
-                    onSubmit={(email) => executeMagicLink({ email, next })}
+                    onSubmitAction={(email) => executeMagicLink({ email, next })}
                     isLoading={magicLinkStatus === 'executing'}
                     view="sign-in"
                   />
@@ -188,7 +188,7 @@ export function Login({
             <TabsContent value="social-login">
               <Card className="border-none shadow-none">
                 <CardHeader className="py-6 px-0">
-                  <CardTitle>Login to NextBase</CardTitle>
+                  <CardTitle>Login to Offscreen</CardTitle>
                   <CardDescription>
                     Login with your social account.
                   </CardDescription>

@@ -2,19 +2,20 @@ import { Separator } from '@/components/ui/separator';
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger
+  SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { getCachedIsUserLoggedIn } from '@/rsc-data/supabase';
 import { redirect } from 'next/navigation';
 import { ReactNode, Suspense } from 'react';
 import { AppSidebar } from './app-sidebar';
+import OnboardingCheck from '@/components/Onboarding/OnboardingCheck';
 
 async function ChildrenWrapper({ children }: { children: ReactNode }) {
   const isLoggedIn = await getCachedIsUserLoggedIn();
   if (!isLoggedIn) {
     redirect('/login');
   }
-  return <>{children}</>;
+  return <OnboardingCheck>{children}</OnboardingCheck>;
 }
 
 export default async function Layout({

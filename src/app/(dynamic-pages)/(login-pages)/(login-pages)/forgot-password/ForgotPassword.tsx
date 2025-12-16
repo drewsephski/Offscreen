@@ -53,7 +53,7 @@ export function ForgotPassword(): JSX.Element {
             </T.P>
 
             <Email
-              onSubmit={(email) => {
+              onSubmitAction={(email) => {
                 execute({ email });
               }}
               isLoading={status === 'executing'}

@@ -1,8 +1,11 @@
 'use client';
+import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
 import { Button } from '@/components/ui/button';
 import { T } from '@/components/ui/Typography';
-import { ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import React from 'react';
+
 
 export const ExternalNavigation = () => {
   return (
@@ -13,50 +16,34 @@ export const ExternalNavigation = () => {
             <MountainIcon className="h-6 w-6" />
           </div>
           <T.H3 className="hidden lg:block text-xl font-semibold leading-tight mt-0">
-            Nextbase Open Source
+            Offscreen
           </T.H3>
           <T.H3 className="block lg:hidden text-xl font-semibold leading-tight mt-0">
-            Nextbase
+            Offscreen
           </T.H3>
         </Link>
         <nav className="ml-auto flex items-center gap-2 sm:gap-4">
           <Link
             className="text-sm hidden lg:inline-flex font-medium text-muted-foreground hover:text-foreground transition-colors"
-            href="#"
-          >
-            Features
-          </Link>
-          <Link
-            className="text-sm hidden lg:inline-flex font-medium text-muted-foreground hover:text-foreground transition-colors"
-            href="#"
-          >
-            Pricing
-          </Link>
-          <Link
-            className="text-sm hidden lg:inline-flex font-medium text-muted-foreground hover:text-foreground transition-colors"
-            href="#"
+            href="/about"
           >
             About
           </Link>
+
           <Link
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             href="/login"
           >
-            Login
+            Sign In
           </Link>
-          <Button variant="default" asChild>
-            <Link
-              href="https://usenextbase.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="hidden sm:inline">
-                Premium Nextbase Starter Kits
-              </span>
-              <span className="sm:hidden">Premium</span>
-              <ExternalLink className="ml-2 h-4 w-4" />
+
+          <Button variant="default" className="group" asChild>
+            <Link href="/login">
+              Start Free Trial <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
+          <AnimatedThemeToggler className="h-8 w-8 rounded-md" />
+
         </nav>
       </div>
     </header>

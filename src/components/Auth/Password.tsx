@@ -1,13 +1,13 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Spinner } from '@/components/ui/spinner';
-import { T } from '@/components/ui/Typography';
 import { Label } from '@/components/ui/label';
+import { T } from '@/components/ui/Typography';
+import { InlineLoading } from '@/components/ui/loading-spinner';
 import { CSSProperties, useState } from 'react';
 
 export const Password = ({
-  onSubmit,
+  onSubmitAction,
   isLoading,
   successMessage,
   label = 'Password',
@@ -15,7 +15,7 @@ export const Password = ({
   className,
   style,
 }: {
-  onSubmit: (password: string) => void;
+  onSubmitAction: (password: string) => void;
   isLoading: boolean;
   successMessage?: string;
   label?: string;
@@ -29,7 +29,7 @@ export const Password = ({
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        onSubmit(password);
+        onSubmitAction(password);
       }}
       className={className}
       style={style}
@@ -56,7 +56,7 @@ export const Password = ({
           <Button disabled={isLoading} type="submit" className="w-full">
             {isLoading ? (
               <>
-                <Spinner className="h-4 w-4 mr-2" />
+                <InlineLoading size="sm" />
                 <span>Loading...</span>
               </>
             ) : (

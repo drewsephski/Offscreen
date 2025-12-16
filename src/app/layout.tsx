@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import '@/styles/globals.css';
+import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { ClientLayout } from './ClientLayout';
 
@@ -52,9 +53,9 @@ const roboto_mono = localFont({
   display: 'swap',
 });
 
-export const metadata = {
-  title: 'Nextbase Open source starter',
-  description: 'Built with Next.js, Supabase, and Tailwind CSS',
+export const metadata: Metadata = {
+  title: 'Offscreen - Digital Family Hub',
+  description: 'Keep your family connected with healthy digital habits and screen time management',
 };
 
 export default async function RootLayout({

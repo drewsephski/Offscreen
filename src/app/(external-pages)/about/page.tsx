@@ -17,231 +17,227 @@ import {
 } from '@/components/ui/empty';
 import { T } from '@/components/ui/Typography';
 import {
-  Database,
-  Github,
-  Lock,
-  Palette,
+  ArrowRight,
+  BarChart3,
+  Clock,
+  Monitor,
   Rocket,
   Shield,
-  Zap,
+  Smartphone,
+  Users
 } from 'lucide-react';
 import Link from 'next/link';
 
+
 export default function About() {
   return (
-    <div className="container mx-auto py-12 space-y-12 max-w-6xl">
-      {/* Hero Section */}
-      <div className="text-center space-y-4">
-        <Badge variant="outline" className="mb-4">
-          About Nextbase
-        </Badge>
-        <T.H1 className="text-4xl sm:text-5xl md:text-6xl">
-          Modern Full-Stack{' '}
-          <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
-            Starter Kit
-          </span>
-        </T.H1>
-        <T.P className="mx-auto max-w-[700px] text-lg text-muted-foreground">
-          Built with Next.js, TypeScript, Supabase, and shadcn/ui. Everything
-          you need to ship your next SaaS product fast.
-        </T.P>
-        <div className="flex flex-wrap justify-center gap-4 pt-4">
-          <Button size="lg" asChild>
-            <Link href="/login">Get Started</Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link
-              href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter"
-              target="_blank"
-            >
-              <Github className="mr-2 h-5 w-5" />
-              View on GitHub
-            </Link>
-          </Button>
-        </div>
-      </div>
-
-      {/* Features Grid */}
-      <div className="space-y-6">
-        <div className="text-center space-y-2">
-          <T.H2 className="text-3xl">Built for Developers</T.H2>
-          <T.P className="text-muted-foreground">
-            Everything you need to build production-ready applications
+    <>
+      <div className="container mx-auto py-12 space-y-12 max-w-6xl">
+        {/* Hero Section */}
+        <div className="text-center space-y-4">
+          <Badge variant="outline" className="mb-4">
+            About Offscreen
+          </Badge>
+          <T.H1 className="text-4xl sm:text-5xl md:text-6xl">
+            Digital Family{' '}
+            <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+              Connection Hub
+            </span>
+          </T.H1>
+          <T.P className="mx-auto max-w-[700px] text-lg text-muted-foreground">
+            Helping families build healthy digital habits and stay connected in today's
+            screen-filled world through intelligent screen time management and activity tracking.
           </T.P>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Rocket className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Next.js 14</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Built on the latest Next.js with App Router, Server Components,
-                and Server Actions for optimal performance.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-2/10">
-                  <Database className="h-6 w-6 text-chart-2" />
-                </div>
-                <CardTitle>Supabase</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                PostgreSQL database, authentication, real-time subscriptions,
-                and storage - all in one platform.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle>Type-Safe</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Full TypeScript support with type-safe database queries and API
-                routes for confidence in your code.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-4/10">
-                  <Palette className="h-6 w-6 text-chart-4" />
-                </div>
-                <CardTitle>shadcn/ui</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Beautiful, accessible components built with Radix UI and
-                Tailwind CSS. Customizable and production-ready.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-1/10">
-                  <Lock className="h-6 w-6 text-chart-1" />
-                </div>
-                <CardTitle>Authentication</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Complete auth flows including magic links, OAuth providers,
-                password reset, and protected routes.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-5/10">
-                  <Zap className="h-6 w-6 text-chart-5" />
-                </div>
-                <CardTitle>Developer UX</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Hot reload, TypeScript, ESLint, Prettier, and more. Optimized
-                for the best developer experience.
-              </CardDescription>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <Empty className="border-2 border-dashed">
-        <EmptyHeader>
-          <EmptyMedia variant="icon">
-            <Rocket />
-          </EmptyMedia>
-          <EmptyTitle>Ready to Build Something Amazing?</EmptyTitle>
-          <EmptyDescription>
-            Clone the repository and start building your next project with the
-            best tools in the ecosystem.
-          </EmptyDescription>
-        </EmptyHeader>
-        <EmptyContent>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Button size="lg" asChild>
-              <Link href="/sign-up">Start Building</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link
-                href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter"
-                target="_blank"
-              >
-                <Github className="mr-2 h-5 w-5" />
-                Star on GitHub
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <Button size="lg" className="group" asChild>
+              <Link href="/login">
+                Start Free Trial <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/">Back to Home</Link>
+            </Button>
           </div>
-        </EmptyContent>
-      </Empty>
+        </div>
 
-      {/* Tech Stack Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Technology Stack</CardTitle>
-          <CardDescription>
-            Built with modern, production-ready technologies
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex items-center gap-2">
-              <Badge>Next.js 14</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>TypeScript</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>Supabase</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>Tailwind CSS</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>shadcn/ui</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>React Hook Form</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>Zod</Badge>
-            </div>
-            <div className="flex items-center gap-2">
-              <Badge>Framer Motion</Badge>
-            </div>
+        {/* Features Grid */}
+        <div className="space-y-6">
+          <div className="text-center space-y-2">
+            <T.H2 className="text-3xl">Built for Modern Families</T.H2>
+            <T.P className="text-muted-foreground">
+              Everything you need to create healthy digital habits and stay connected
+            </T.P>
           </div>
-        </CardContent>
-      </Card>
-    </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <Clock className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>Screen Time Management</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Set healthy limits and track screen time across all devices with
+                  easy-to-use parental controls and real-time monitoring.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-2/10">
+                    <BarChart3 className="h-6 w-6 text-chart-2" />
+                  </div>
+                  <CardTitle>Activity Insights</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Get detailed insights into how your family spends time online with
+                  comprehensive activity reports and usage analytics.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <Users className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle>Family Dashboard</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Manage all family members from one central dashboard with
+                  real-time updates, alerts, and comprehensive controls.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-4/10">
+                    <Shield className="h-6 w-6 text-chart-4" />
+                  </div>
+                  <CardTitle>Safe Browsing</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Protect your family with built-in content filtering and safe
+                  browsing controls for all ages and devices.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-1/10">
+                    <Smartphone className="h-6 w-6 text-chart-1" />
+                  </div>
+                  <CardTitle>App Blocking</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Control access to specific apps and set age-appropriate limits
+                  for different family members with flexible scheduling.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-chart-5/10">
+                    <Monitor className="h-6 w-6 text-chart-5" />
+                  </div>
+                  <CardTitle>Cross-Platform</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Works seamlessly across iOS, Android, Windows, and Mac to
+                  protect all your family devices with one unified solution.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <Empty className="border-2 border-dashed">
+          <EmptyHeader>
+            <EmptyMedia variant="icon">
+              <Rocket />
+            </EmptyMedia>
+            <EmptyTitle>Ready to Reconnect Your Family?</EmptyTitle>
+            <EmptyDescription>
+              Start your free trial today and take the first step toward healthier
+              digital habits and stronger family connections.
+            </EmptyDescription>
+          </EmptyHeader>
+          <EmptyContent>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Button size="lg" className="group" asChild>
+                <Link href="/login">
+                  Start Free Trial <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/">Back to Home</Link>
+              </Button>
+            </div>
+          </EmptyContent>
+        </Empty>
+
+        {/* Tech Stack Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Technology Stack</CardTitle>
+            <CardDescription>
+              Built with modern, secure technologies to protect your family
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex items-center gap-2">
+                <Badge>React</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>TypeScript</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>Next.js</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>Tailwind CSS</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>Supabase</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>Real-time Sync</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>Secure Auth</Badge>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge>Cross-Platform</Badge>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }

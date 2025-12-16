@@ -1,18 +1,13 @@
-import { PrivateItemsList } from '@/app/(dynamic-pages)/(main-pages)/PrivateItemsList';
+'use client';
+
+import { FamilySectionWrapper } from '@/components/Dashboard/FamilySectionWrapper';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { T } from '@/components/ui/Typography';
-import { getUserPrivateItems } from '@/data/anon/privateItems';
-import { PlusCircle } from 'lucide-react';
+import { PlusCircle, Users } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
-
-
-async function UserPrivateItemsListContainer() {
-  const privateItems = await getUserPrivateItems();
-  return <PrivateItemsList privateItems={privateItems} showActions={false} />;
-}
 
 function ListSkeleton() {
   return (
@@ -42,26 +37,39 @@ function ListSkeleton() {
   );
 }
 
-async function Heading() {
-  'use cache';
+function Heading() {
   return (
-    <>
+    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <T.H1>Dashboard</T.H1>
-      <Link href="/dashboard/new">
-        <Button className="flex items-center gap-2">
-          <PlusCircle className="h-4 w-4" /> New Private Item
-        </Button>
-      </Link>
-    </>
+      <div className="flex gap-2">
+        <Link href="/dashboard/new">
+          <Button variant="outline" className="flex items-center gap-2">
+            <PlusCircle className="h-4 w-4" /> New Private Item
+          </Button>
+        </Link>
+        <Link href="/dashboard/sessions">
+          <Button className="flex items-center gap-2">
+            <Users className="h-4 w-4" /> Coaching Sessions
+          </Button>
+        </Link>
+      </div>
+    </div>
   );
-};
+}
 
 export default function DashboardPage() {
+  const handleChildAdded = () => {
+    // Refresh the page to show updated data
+    window.location.reload();
+  };
+
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4 md:p-6">
+    <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
       <Heading />
+      <Suspense fallback={<Skeleton className="h-48 w-full" />}>
+        <FamilySectionWrapper onChildAdded={handleChildAdded} />
+      </Suspense>
       <Suspense fallback={<ListSkeleton />}>
-        <UserPrivateItemsListContainer />
       </Suspense>
     </div>
   );

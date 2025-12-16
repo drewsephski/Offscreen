@@ -33,7 +33,7 @@ export default async function PrivateItemHeading({
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/dashboard" className="flex items-center gap-1">
+            <Link href="/" className="flex items-center gap-1">
               <Home className="h-3.5 w-3.5" />
               <span>Home</span>
             </Link>

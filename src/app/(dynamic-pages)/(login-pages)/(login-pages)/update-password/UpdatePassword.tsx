@@ -52,7 +52,7 @@ export function UpdatePassword() {
           <CardContent>
             <Password
               isLoading={status === 'executing'}
-              onSubmit={(password: string) => execute({ password })}
+              onSubmitAction={(password: string) => execute({ password })}
               label="Create your new Password"
               buttonLabel="Confirm Password"
             />

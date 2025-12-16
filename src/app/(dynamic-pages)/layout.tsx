@@ -1,11 +1,13 @@
 
 
-export const metadata = {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
   icons: {
     icon: '/images/logo-black-main.ico',
   },
-  title: 'Nextbase Open source',
-  description: 'Nextbase Open source',
+  title: 'Offscreen - Digital Family Hub',
+  description: 'Keep your family connected with healthy digital habits and screen time management',
 };
 
 export default async function RootLayout({
