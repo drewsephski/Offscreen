@@ -7,106 +7,14 @@ export type Json =
   | Json[]
 
 export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
+  __InternalSupabase: {
+    PostgrestVersion: "14.1"
+  }
   public: {
     Tables: {
-      content_blog_post_comments: {
-        Row: {
-          author_id: string
-          blog_post_id: string
-          body: string
-          created_at: string
-          id: string
-          updated_at: string
-        }
-        Insert: {
-          author_id: string
-          blog_post_id: string
-          body: string
-          created_at?: string
-          id?: string
-          updated_at?: string
-        }
-        Update: {
-          author_id?: string
-          blog_post_id?: string
-          body?: string
-          created_at?: string
-          id?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "content_blog_post_comments_blog_post_id_fkey"
-            columns: ["blog_post_id"]
-            isOneToOne: false
-            referencedRelation: "content_blog_posts"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      content_blog_posts: {
-        Row: {
-          author_id: string
-          body: string
-          created_at: string
-          excerpt: string | null
-          id: string
-          is_published: boolean
-          published_at: string | null
-          slug: string
-          title: string
-          updated_at: string
-        }
-        Insert: {
-          author_id: string
-          body: string
-          created_at?: string
-          excerpt?: string | null
-          id?: string
-          is_published?: boolean
-          published_at?: string | null
-          slug: string
-          title: string
-          updated_at?: string
-        }
-        Update: {
-          author_id?: string
-          body?: string
-          created_at?: string
-          excerpt?: string | null
-          id?: string
-          is_published?: boolean
-          published_at?: string | null
-          slug?: string
-          title?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      private_items: {
-        Row: {
-          created_at: string
-          description: string
-          id: string
-          name: string
-          owner_id: string | null
-        }
-        Insert: {
-          created_at?: string
-          description: string
-          id?: string
-          name: string
-          owner_id?: string | null
-        }
-        Update: {
-          created_at?: string
-          description?: string
-          id?: string
-          name?: string
-          owner_id?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
@@ -245,4 +153,3 @@ export const Constants = {
     Enums: {},
   },
 } as const
-
